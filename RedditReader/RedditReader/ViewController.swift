@@ -7,12 +7,20 @@
 //
 
 import UIKit
+import DomainLayer
 
 class ViewController: UIViewController {
 
+    let getTopEntries = GetTopEntriesList()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+
+        self.getTopEntries.execute(with: GetTopEntriesListArgs(offset: 0, limit: 10), onError: { (error) in
+            print("ERROR: \(error.localizedDescription)")
+        }) { (items) in
+            print("items.count = \(items.count)")
+        }
     }
 
     override func didReceiveMemoryWarning() {

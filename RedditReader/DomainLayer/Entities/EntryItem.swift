@@ -22,4 +22,28 @@ public struct EntryItem: Decodable {
         self.thumbnailURL = thumbnailURL
         self.numberOfComments = numberOfComments
     }
+    
+    private enum CodingKeys: String, CodingKey {
+        case data
+        case title
+        case authorName = "author"
+        case creationDate = "created"
+        case thumbnailURL = "thumbnail"
+        case numberOfComments = "num_comments"
+    }
+    
+    public init(from decoder: Decoder) throws {
+        let topContainer = try decoder.container(keyedBy: CodingKeys.self)
+        let container = try topContainer.nestedContainer(keyedBy: CodingKeys.self, forKey: .data)
+        
+        self.title = try container.decode(String.self, forKey: .title)
+        self.authorName = try container.decode(String.self, forKey: .authorName)
+        self.numberOfComments = try container.decode(Int.self, forKey: .numberOfComments)
+        
+        let urlString = try container.decode(String.self, forKey: .thumbnailURL)
+        self.thumbnailURL = URL(string: urlString)!
+        
+        let timeStamp = try container.decode(TimeInterval.self, forKey: .creationDate)
+        self.creationDate = Date(timeIntervalSince1970: timeStamp)
+    }
 }

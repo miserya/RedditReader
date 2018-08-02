@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1DA799D62112E15300C780D7 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA799D52112E15300C780D7 /* NetworkingManager.swift */; };
+		1DA799D82112EE0100C780D7 /* RequestTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA799D72112EE0100C780D7 /* RequestTarget.swift */; };
+		1DA799DA2112EEC800C780D7 /* EntriesRequestTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA799D92112EEC800C780D7 /* EntriesRequestTarget.swift */; };
+		1DA799DC2112F27400C780D7 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA799DB2112F27400C780D7 /* Pagination.swift */; };
+		1DA799DE2112F97400C780D7 /* ServerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA799DD2112F97400C780D7 /* ServerConfiguration.swift */; };
+		1DA799E02112FC2600C780D7 /* DomainLayerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA799DF2112FC2600C780D7 /* DomainLayerError.swift */; };
 		66D2035B2110EDB400982CF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D2035A2110EDB400982CF7 /* AppDelegate.swift */; };
 		66D2035D2110EDB400982CF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D2035C2110EDB400982CF7 /* ViewController.swift */; };
 		66D203602110EDB400982CF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66D2035E2110EDB400982CF7 /* Main.storyboard */; };
@@ -17,7 +23,7 @@
 		66D203842110EF3400982CF7 /* DomainLayer.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 66D2037C2110EF3300982CF7 /* DomainLayer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		66D2038B2110EFA900982CF7 /* UseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D2038A2110EFA900982CF7 /* UseCase.swift */; };
 		66D2038E2110F4F300982CF7 /* EntriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D2038D2110F4F300982CF7 /* EntriesService.swift */; };
-		66D203912110F53700982CF7 /* GetTopEntriesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D203902110F53700982CF7 /* GetTopEntriesList.swift */; };
+		66D203912110F53700982CF7 /* GetNextTopEntriesList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D203902110F53700982CF7 /* GetNextTopEntriesList.swift */; };
 		66D203942110F5B900982CF7 /* EntryItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D203932110F5B900982CF7 /* EntryItem.swift */; };
 /* End PBXBuildFile section */
 
@@ -46,6 +52,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1DA799D52112E15300C780D7 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
+		1DA799D72112EE0100C780D7 /* RequestTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTarget.swift; sourceTree = "<group>"; };
+		1DA799D92112EEC800C780D7 /* EntriesRequestTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesRequestTarget.swift; sourceTree = "<group>"; };
+		1DA799DB2112F27400C780D7 /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
+		1DA799DD2112F97400C780D7 /* ServerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConfiguration.swift; sourceTree = "<group>"; };
+		1DA799DF2112FC2600C780D7 /* DomainLayerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainLayerError.swift; sourceTree = "<group>"; };
 		66D203572110EDB300982CF7 /* RedditReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66D2035A2110EDB400982CF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66D2035C2110EDB400982CF7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,7 +70,7 @@
 		66D2037F2110EF3400982CF7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		66D2038A2110EFA900982CF7 /* UseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UseCase.swift; sourceTree = "<group>"; };
 		66D2038D2110F4F300982CF7 /* EntriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesService.swift; sourceTree = "<group>"; };
-		66D203902110F53700982CF7 /* GetTopEntriesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTopEntriesList.swift; sourceTree = "<group>"; };
+		66D203902110F53700982CF7 /* GetNextTopEntriesList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetNextTopEntriesList.swift; sourceTree = "<group>"; };
 		66D203932110F5B900982CF7 /* EntryItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +93,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1DA799D42112DE5900C780D7 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				1DA799D72112EE0100C780D7 /* RequestTarget.swift */,
+				1DA799D52112E15300C780D7 /* NetworkingManager.swift */,
+				1DA799DD2112F97400C780D7 /* ServerConfiguration.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		66D2034E2110EDB300982CF7 = {
 			isa = PBXGroup;
 			children = (
@@ -116,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				66D203892110EF9F00982CF7 /* Common */,
+				1DA799D42112DE5900C780D7 /* Networking */,
 				66D203922110F56E00982CF7 /* Entities */,
 				66D2038C2110F3ED00982CF7 /* Services */,
 				66D2037E2110EF3400982CF7 /* DomainLayer.h */,
@@ -128,6 +151,7 @@
 			isa = PBXGroup;
 			children = (
 				66D2038A2110EFA900982CF7 /* UseCase.swift */,
+				1DA799DF2112FC2600C780D7 /* DomainLayerError.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -136,6 +160,7 @@
 			isa = PBXGroup;
 			children = (
 				66D2038F2110F51400982CF7 /* UseCases */,
+				1DA799D92112EEC800C780D7 /* EntriesRequestTarget.swift */,
 				66D2038D2110F4F300982CF7 /* EntriesService.swift */,
 			);
 			path = Services;
@@ -144,7 +169,7 @@
 		66D2038F2110F51400982CF7 /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				66D203902110F53700982CF7 /* GetTopEntriesList.swift */,
+				66D203902110F53700982CF7 /* GetNextTopEntriesList.swift */,
 			);
 			path = UseCases;
 			sourceTree = "<group>";
@@ -153,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				66D203932110F5B900982CF7 /* EntryItem.swift */,
+				1DA799DB2112F27400C780D7 /* Pagination.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -281,9 +307,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				66D2038E2110F4F300982CF7 /* EntriesService.swift in Sources */,
+				1DA799D82112EE0100C780D7 /* RequestTarget.swift in Sources */,
+				1DA799DA2112EEC800C780D7 /* EntriesRequestTarget.swift in Sources */,
 				66D2038B2110EFA900982CF7 /* UseCase.swift in Sources */,
-				66D203912110F53700982CF7 /* GetTopEntriesList.swift in Sources */,
+				66D203912110F53700982CF7 /* GetNextTopEntriesList.swift in Sources */,
+				1DA799DC2112F27400C780D7 /* Pagination.swift in Sources */,
+				1DA799D62112E15300C780D7 /* NetworkingManager.swift in Sources */,
 				66D203942110F5B900982CF7 /* EntryItem.swift in Sources */,
+				1DA799E02112FC2600C780D7 /* DomainLayerError.swift in Sources */,
+				1DA799DE2112F97400C780D7 /* ServerConfiguration.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

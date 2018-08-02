@@ -10,7 +10,7 @@ import Foundation
 
 open class UseCase<Input, Output> {
 
-    func build(with args: Input, onError: (Error) -> Void, onSuccess: (Output) -> Void) {
+    func build(with args: Input, onError: @escaping (Error) -> Void, onSuccess: @escaping (Output) -> Void) {
         preconditionFailure("Must be overridden!")
     }
 

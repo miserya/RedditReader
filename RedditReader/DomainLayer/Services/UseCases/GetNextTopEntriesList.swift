@@ -1,5 +1,5 @@
 //
-//  GetTopEntriesList.swift
+//  GetNextTopEntriesList.swift
 //  DomainLayer
 //
 //  Created by Mariya Golubeva on 7/31/18.
@@ -8,31 +8,38 @@
 
 import Foundation
 
-public class GetTopEntriesList: UseCase<GetTopEntriesListArgs, Pagination<EntryItem>> {
+public class GetNextTopEntriesList: UseCase<GetNextTopEntriesListArgs, Pagination<EntryItem>> {
 
     private lazy var service = EntriesService()
 
     public override init() {
     }
 
-    override func build(with args: GetTopEntriesListArgs, onError: (Error) -> Void, onSuccess: (Pagination<EntryItem>) -> Void) {
-        self.service.build(with: args.limit, offset: args.offset) { (error, entities) in
+    override func build(with args: GetNextTopEntriesListArgs,
+                        onError: @escaping (Error) -> Void,
+                        onSuccess: @escaping (Pagination<EntryItem>) -> Void) {
+        self.service.getNextBatch(with: args.limit, offset: args.offset, next: args.next) { (error, entities) in
             if let error = error {
                 onError(error)
             }
-            else {
+            else if let entities = entities {
                 onSuccess(entities)
+            }
+            else {
+                onError(DomainLayerError.emptyResponse)
             }
         }
     }
 }
 
-public struct GetTopEntriesListArgs {
+public struct GetNextTopEntriesListArgs {
     let offset: Int
     let limit: Int
+    let next: String?
 
-    public init(offset: Int, limit: Int) {
+    public init(offset: Int, limit: Int, next: String? = nil) {
         self.offset = offset
         self.limit = limit
+        self.next = next
     }
 }

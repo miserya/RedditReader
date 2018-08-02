@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+struct ServerConfiguration {
+    static let baseURL: String = "https://www.reddit.com"
+}

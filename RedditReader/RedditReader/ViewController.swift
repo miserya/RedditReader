@@ -11,23 +11,17 @@ import DomainLayer
 
 class ViewController: UIViewController {
 
-    let getTopEntries = GetTopEntriesList()
+    let getTopEntries = GetNextTopEntriesList()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.getTopEntries.execute(with: GetTopEntriesListArgs(offset: 0, limit: 10), onError: { (error) in
+        self.getTopEntries.execute(with: GetNextTopEntriesListArgs(offset: 0, limit: 10), onError: { (error) in
             print("ERROR: \(error.localizedDescription)")
         }) { (items) in
-            print("items.count = \(items.count)")
+            print("SUCCESS: items.count = \(items.count)")
         }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 
 }
 

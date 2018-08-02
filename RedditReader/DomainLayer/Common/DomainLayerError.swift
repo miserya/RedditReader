@@ -7,3 +7,19 @@
 //
 
 import Foundation
+
+public enum DomainLayerError: Error {
+    case emptyResponse
+    case invalidRequest
+}
+
+extension DomainLayerError: LocalizedError {
+    public var errorDescription: String? {
+        switch self {
+        case .emptyResponse:
+            return "Empty response"
+        case .invalidRequest:
+            return "Invalid request configuration"
+        }
+    }
+}

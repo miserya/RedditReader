@@ -9,7 +9,8 @@
 import Foundation
 
 class EntriesService {
-    func build(with limit: Int, offset: Int, onError: (Error) -> Void, onSuccess: ([EntryItem]) -> Void) {
-
+    
+    func getNextBatch(with limit: Int, offset: Int, next: String?, onComplete: @escaping (Error?, Pagination<EntryItem>?) -> Void) {
+        NetworkingManager.default.request(EntriesRequestTarget.getNextTopEntriesList(nextBatch: next, limit: limit, offset: offset), completion: onComplete)
     }
 }

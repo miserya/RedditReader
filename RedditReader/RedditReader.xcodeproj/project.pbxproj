@@ -13,8 +13,15 @@
 		1DA799DC2112F27400C780D7 /* Pagination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA799DB2112F27400C780D7 /* Pagination.swift */; };
 		1DA799DE2112F97400C780D7 /* ServerConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA799DD2112F97400C780D7 /* ServerConfiguration.swift */; };
 		1DA799E02112FC2600C780D7 /* DomainLayerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA799DF2112FC2600C780D7 /* DomainLayerError.swift */; };
+		1DA799F821134E1000C780D7 /* TopEntriesListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA799F721134E1000C780D7 /* TopEntriesListPresenter.swift */; };
+		1DA799FA21134E1A00C780D7 /* TopEntriesListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA799F921134E1A00C780D7 /* TopEntriesListRouter.swift */; };
+		1DA799FC21134ECD00C780D7 /* TopEntriesListModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA799FB21134ECD00C780D7 /* TopEntriesListModuleOutput.swift */; };
+		1DA799FE21134ED900C780D7 /* TopEntriesListModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA799FD21134ED900C780D7 /* TopEntriesListModuleInput.swift */; };
+		1DA79A0021134EE900C780D7 /* TopEntriesListViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA799FF21134EE900C780D7 /* TopEntriesListViewInput.swift */; };
+		1DA79A0221134EF300C780D7 /* TopEntriesListViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA79A0121134EF300C780D7 /* TopEntriesListViewOutput.swift */; };
+		1DA79A0A2113516600C780D7 /* TopEntriesListStateStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA79A092113516600C780D7 /* TopEntriesListStateStorage.swift */; };
 		66D2035B2110EDB400982CF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D2035A2110EDB400982CF7 /* AppDelegate.swift */; };
-		66D2035D2110EDB400982CF7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D2035C2110EDB400982CF7 /* ViewController.swift */; };
+		66D2035D2110EDB400982CF7 /* TopEntriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D2035C2110EDB400982CF7 /* TopEntriesListViewController.swift */; };
 		66D203602110EDB400982CF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66D2035E2110EDB400982CF7 /* Main.storyboard */; };
 		66D203622110EDB600982CF7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 66D203612110EDB600982CF7 /* Assets.xcassets */; };
 		66D203652110EDB600982CF7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66D203632110EDB600982CF7 /* LaunchScreen.storyboard */; };
@@ -58,9 +65,16 @@
 		1DA799DB2112F27400C780D7 /* Pagination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pagination.swift; sourceTree = "<group>"; };
 		1DA799DD2112F97400C780D7 /* ServerConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerConfiguration.swift; sourceTree = "<group>"; };
 		1DA799DF2112FC2600C780D7 /* DomainLayerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DomainLayerError.swift; sourceTree = "<group>"; };
+		1DA799F721134E1000C780D7 /* TopEntriesListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopEntriesListPresenter.swift; sourceTree = "<group>"; };
+		1DA799F921134E1A00C780D7 /* TopEntriesListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopEntriesListRouter.swift; sourceTree = "<group>"; };
+		1DA799FB21134ECD00C780D7 /* TopEntriesListModuleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopEntriesListModuleOutput.swift; sourceTree = "<group>"; };
+		1DA799FD21134ED900C780D7 /* TopEntriesListModuleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopEntriesListModuleInput.swift; sourceTree = "<group>"; };
+		1DA799FF21134EE900C780D7 /* TopEntriesListViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopEntriesListViewInput.swift; sourceTree = "<group>"; };
+		1DA79A0121134EF300C780D7 /* TopEntriesListViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopEntriesListViewOutput.swift; sourceTree = "<group>"; };
+		1DA79A092113516600C780D7 /* TopEntriesListStateStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopEntriesListStateStorage.swift; sourceTree = "<group>"; };
 		66D203572110EDB300982CF7 /* RedditReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66D2035A2110EDB400982CF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		66D2035C2110EDB400982CF7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		66D2035C2110EDB400982CF7 /* TopEntriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopEntriesListViewController.swift; sourceTree = "<group>"; };
 		66D2035F2110EDB400982CF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		66D203612110EDB600982CF7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		66D203642110EDB600982CF7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -103,6 +117,60 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
+		1DA799F321134D0F00C780D7 /* TopEntriesListModule */ = {
+			isa = PBXGroup;
+			children = (
+				1DA799F421134D2800C780D7 /* Presenter */,
+				1DA799F621134D4500C780D7 /* Router */,
+				1DA799F521134D3300C780D7 /* View */,
+			);
+			path = TopEntriesListModule;
+			sourceTree = "<group>";
+		};
+		1DA799F421134D2800C780D7 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				1DA79A082113515700C780D7 /* StateStorage */,
+				1DA799FB21134ECD00C780D7 /* TopEntriesListModuleOutput.swift */,
+				1DA799FD21134ED900C780D7 /* TopEntriesListModuleInput.swift */,
+				1DA799F721134E1000C780D7 /* TopEntriesListPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		1DA799F521134D3300C780D7 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1DA79A0121134EF300C780D7 /* TopEntriesListViewOutput.swift */,
+				1DA799FF21134EE900C780D7 /* TopEntriesListViewInput.swift */,
+				66D2035C2110EDB400982CF7 /* TopEntriesListViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1DA799F621134D4500C780D7 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				1DA799F921134E1A00C780D7 /* TopEntriesListRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		1DA79A0521134F2200C780D7 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		1DA79A082113515700C780D7 /* StateStorage */ = {
+			isa = PBXGroup;
+			children = (
+				1DA79A092113516600C780D7 /* TopEntriesListStateStorage.swift */,
+			);
+			path = StateStorage;
+			sourceTree = "<group>";
+		};
 		66D2034E2110EDB300982CF7 = {
 			isa = PBXGroup;
 			children = (
@@ -124,8 +192,9 @@
 		66D203592110EDB300982CF7 /* RedditReader */ = {
 			isa = PBXGroup;
 			children = (
+				1DA79A0521134F2200C780D7 /* Common */,
+				1DA799F321134D0F00C780D7 /* TopEntriesListModule */,
 				66D2035A2110EDB400982CF7 /* AppDelegate.swift */,
-				66D2035C2110EDB400982CF7 /* ViewController.swift */,
 				66D2035E2110EDB400982CF7 /* Main.storyboard */,
 				66D203612110EDB600982CF7 /* Assets.xcassets */,
 				66D203632110EDB600982CF7 /* LaunchScreen.storyboard */,
@@ -297,8 +366,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66D2035D2110EDB400982CF7 /* ViewController.swift in Sources */,
+				1DA799F821134E1000C780D7 /* TopEntriesListPresenter.swift in Sources */,
+				66D2035D2110EDB400982CF7 /* TopEntriesListViewController.swift in Sources */,
+				1DA799FC21134ECD00C780D7 /* TopEntriesListModuleOutput.swift in Sources */,
+				1DA79A0021134EE900C780D7 /* TopEntriesListViewInput.swift in Sources */,
+				1DA799FE21134ED900C780D7 /* TopEntriesListModuleInput.swift in Sources */,
+				1DA79A0A2113516600C780D7 /* TopEntriesListStateStorage.swift in Sources */,
 				66D2035B2110EDB400982CF7 /* AppDelegate.swift in Sources */,
+				1DA79A0221134EF300C780D7 /* TopEntriesListViewOutput.swift in Sources */,
+				1DA799FA21134E1A00C780D7 /* TopEntriesListRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

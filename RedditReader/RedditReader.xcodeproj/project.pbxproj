@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D8DA263211443F400EE3ED1 /* TopEntriesListAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8DA262211443F400EE3ED1 /* TopEntriesListAdapter.swift */; };
+		1D8DA2662114479400EE3ED1 /* EntrieTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8DA2652114479400EE3ED1 /* EntrieTableViewCell.swift */; };
+		1D8DA268211448DC00EE3ED1 /* EntryViewItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8DA267211448DC00EE3ED1 /* EntryViewItem.swift */; };
+		1D8DA26B2114491000EE3ED1 /* EntryMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8DA26A2114491000EE3ED1 /* EntryMapper.swift */; };
+		1D8DA26E21144AC800EE3ED1 /* Date+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8DA26D21144AC800EE3ED1 /* Date+Helper.swift */; };
+		1D8DA2702114515300EE3ED1 /* Int+Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D8DA26F2114515300EE3ED1 /* Int+Helper.swift */; };
 		1DA799D62112E15300C780D7 /* NetworkingManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA799D52112E15300C780D7 /* NetworkingManager.swift */; };
 		1DA799D82112EE0100C780D7 /* RequestTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA799D72112EE0100C780D7 /* RequestTarget.swift */; };
 		1DA799DA2112EEC800C780D7 /* EntriesRequestTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA799D92112EEC800C780D7 /* EntriesRequestTarget.swift */; };
@@ -59,6 +65,12 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1D8DA262211443F400EE3ED1 /* TopEntriesListAdapter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopEntriesListAdapter.swift; sourceTree = "<group>"; };
+		1D8DA2652114479400EE3ED1 /* EntrieTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntrieTableViewCell.swift; sourceTree = "<group>"; };
+		1D8DA267211448DC00EE3ED1 /* EntryViewItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryViewItem.swift; sourceTree = "<group>"; };
+		1D8DA26A2114491000EE3ED1 /* EntryMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntryMapper.swift; sourceTree = "<group>"; };
+		1D8DA26D21144AC800EE3ED1 /* Date+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Helper.swift"; sourceTree = "<group>"; };
+		1D8DA26F2114515300EE3ED1 /* Int+Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Helper.swift"; sourceTree = "<group>"; };
 		1DA799D52112E15300C780D7 /* NetworkingManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingManager.swift; sourceTree = "<group>"; };
 		1DA799D72112EE0100C780D7 /* RequestTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestTarget.swift; sourceTree = "<group>"; };
 		1DA799D92112EEC800C780D7 /* EntriesRequestTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntriesRequestTarget.swift; sourceTree = "<group>"; };
@@ -107,6 +119,31 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D8DA2642114477B00EE3ED1 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				1D8DA2652114479400EE3ED1 /* EntrieTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		1D8DA2692114490200EE3ED1 /* Mapper */ = {
+			isa = PBXGroup;
+			children = (
+				1D8DA26A2114491000EE3ED1 /* EntryMapper.swift */,
+			);
+			path = Mapper;
+			sourceTree = "<group>";
+		};
+		1D8DA26C21144ABC00EE3ED1 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				1D8DA26D21144AC800EE3ED1 /* Date+Helper.swift */,
+				1D8DA26F2114515300EE3ED1 /* Int+Helper.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 		1DA799D42112DE5900C780D7 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,8 +178,10 @@
 		1DA799F521134D3300C780D7 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1D8DA2642114477B00EE3ED1 /* Cells */,
 				1DA79A0121134EF300C780D7 /* TopEntriesListViewOutput.swift */,
 				1DA799FF21134EE900C780D7 /* TopEntriesListViewInput.swift */,
+				1D8DA262211443F400EE3ED1 /* TopEntriesListAdapter.swift */,
 				66D2035C2110EDB400982CF7 /* TopEntriesListViewController.swift */,
 			);
 			path = View;
@@ -156,11 +195,13 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
-		1DA79A0521134F2200C780D7 /* Common */ = {
+		1DA79A0521134F2200C780D7 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				1D8DA2692114490200EE3ED1 /* Mapper */,
+				1D8DA267211448DC00EE3ED1 /* EntryViewItem.swift */,
 			);
-			path = Common;
+			path = Entities;
 			sourceTree = "<group>";
 		};
 		1DA79A082113515700C780D7 /* StateStorage */ = {
@@ -192,7 +233,8 @@
 		66D203592110EDB300982CF7 /* RedditReader */ = {
 			isa = PBXGroup;
 			children = (
-				1DA79A0521134F2200C780D7 /* Common */,
+				1D8DA26C21144ABC00EE3ED1 /* Common */,
+				1DA79A0521134F2200C780D7 /* Entities */,
 				1DA799F321134D0F00C780D7 /* TopEntriesListModule */,
 				66D2035A2110EDB400982CF7 /* AppDelegate.swift */,
 				66D2035E2110EDB400982CF7 /* Main.storyboard */,
@@ -370,10 +412,16 @@
 				66D2035D2110EDB400982CF7 /* TopEntriesListViewController.swift in Sources */,
 				1DA799FC21134ECD00C780D7 /* TopEntriesListModuleOutput.swift in Sources */,
 				1DA79A0021134EE900C780D7 /* TopEntriesListViewInput.swift in Sources */,
+				1D8DA263211443F400EE3ED1 /* TopEntriesListAdapter.swift in Sources */,
+				1D8DA2702114515300EE3ED1 /* Int+Helper.swift in Sources */,
+				1D8DA2662114479400EE3ED1 /* EntrieTableViewCell.swift in Sources */,
+				1D8DA268211448DC00EE3ED1 /* EntryViewItem.swift in Sources */,
 				1DA799FE21134ED900C780D7 /* TopEntriesListModuleInput.swift in Sources */,
 				1DA79A0A2113516600C780D7 /* TopEntriesListStateStorage.swift in Sources */,
 				66D2035B2110EDB400982CF7 /* AppDelegate.swift in Sources */,
 				1DA79A0221134EF300C780D7 /* TopEntriesListViewOutput.swift in Sources */,
+				1D8DA26E21144AC800EE3ED1 /* Date+Helper.swift in Sources */,
+				1D8DA26B2114491000EE3ED1 /* EntryMapper.swift in Sources */,
 				1DA799FA21134E1A00C780D7 /* TopEntriesListRouter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

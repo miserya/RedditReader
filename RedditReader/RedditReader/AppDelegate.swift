@@ -15,7 +15,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let view = storyboard.instantiateViewController(withIdentifier: "TopEntriesListViewController") as! TopEntriesListViewController
+        
+        let router = TopEntriesListRouter()
+        router.view = view
+        
+        let presenter = TopEntriesListPresenter()
+        presenter.stateStorage = TopEntriesListStateStorage()
+        presenter.view = view
+        presenter.router = router
+        presenter.mapper = EntryMapper()
+        
+        view.output = presenter
+        view.adapter = TopEntriesListAdapter()
+        
+        self.window?.rootViewController = UINavigationController(rootViewController: view)
+        self.window?.makeKeyAndVisible()
+
         return true
     }
 

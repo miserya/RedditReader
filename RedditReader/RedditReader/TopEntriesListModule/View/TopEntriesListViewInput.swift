@@ -9,5 +9,14 @@
 import Foundation
 
 protocol TopEntriesListViewInput: class {
+    
     func setupInitialState()
+    
+    func startLoading()
+    
+    func stopLoading()
+    
+    func batchLoaded(_ items: [EntryViewItem])
+    
+    func clearBatch()
 }

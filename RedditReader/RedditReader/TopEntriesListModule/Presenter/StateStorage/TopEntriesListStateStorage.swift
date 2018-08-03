@@ -9,4 +9,7 @@
 import Foundation
 
 struct TopEntriesListStateStorage {
+    let requestLimit: Int = 10
+    var next: String?
+    var prev: String?
 }

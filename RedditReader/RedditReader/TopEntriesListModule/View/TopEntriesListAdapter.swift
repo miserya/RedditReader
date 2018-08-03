@@ -55,7 +55,8 @@ class TopEntriesListAdapter: NSObject, UITableViewDelegate, UITableViewDataSourc
         cell.labelAuthor.text = "by \(item.authorName)"
         cell.labelTime.text = item.creationDate.timeAgoString()
         cell.labelNumberOfComments.text = "\(item.numberOfComments.shortStringValue()) Comments"
-        return cell        
+        cell.imgView.setImageURL(item.thumbnailURL)
+        return cell
     }
     
     //MARK: - UIScrollViewDelegate

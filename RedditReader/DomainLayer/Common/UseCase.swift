@@ -27,5 +27,4 @@ open class UseCase<Input, Output> {
             })
         }
     }
-    
 }

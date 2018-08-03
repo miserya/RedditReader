@@ -8,18 +8,19 @@
 
 import Foundation
 
-class NetworkingManager {
+class NetworkingManager: NSObject, URLSessionDownloadDelegate {
     
     static var `default`: NetworkingManager = NetworkingManager()
     
-    private lazy var configuration: URLSessionConfiguration = {
-        let config = URLSessionConfiguration.default
-        config.timeoutIntervalForRequest = 60
-        config.allowsCellularAccess = true
-        return config
-    }()
-    private lazy var session = URLSession(configuration: self.configuration)
+    private lazy var dataSession: URLSession = { return URLSession(configuration: .default) }()
     private var dataTasks = [String: URLSessionDataTask]()
+    
+    private lazy var downloadsSession: URLSession = {
+        return URLSession(configuration: URLSessionConfiguration.background(withIdentifier: "RedditReaderDownloadSession"), delegate: self, delegateQueue: nil)
+    }()
+    private var downloadTasks = [String: DownloadTask]()
+    
+    //MARK: - Data Request
     
     func request<Output: Decodable>(_ target: RequestTarget, completion: @escaping (Error?, Output?) -> Void) {
         
@@ -46,7 +47,7 @@ class NetworkingManager {
         
         debugPrint("REQUEST: \(urlRequest)")
         
-        let dataTask = self.session.dataTask(with: urlRequest) { [weak self] (data, response, error) in
+        let dataTask = self.dataSession.dataTask(with: urlRequest) { [weak self] (data, response, error) in
             guard let `self` = self else { return }
             
             defer { self.dataTasks[url.absoluteString] = nil }
@@ -70,5 +71,45 @@ class NetworkingManager {
         }
         
         dataTask.resume()
+        self.dataTasks[url.absoluteString] = dataTask
     }
+    
+    func requestDownload(with url: URL, completion: @escaping (Error?, URL?) -> Void) {
+        if let dataTask = self.downloadTasks[url.absoluteString] {
+            dataTask.task.cancel()
+            self.downloadTasks[url.absoluteString] = nil
+        }
+        
+        let downloadTask = self.downloadsSession.downloadTask(with: url)
+        downloadTask.resume()
+        self.downloadTasks[url.absoluteString] = DownloadTask(task: downloadTask, completion: completion)
+    }
+    
+    func cancelDownloadingTask(with url: URL) {
+        if let dataTask = self.downloadTasks[url.absoluteString] {
+            dataTask.task.cancel()
+            self.downloadTasks[url.absoluteString] = nil
+        }
+    }
+    
+    //MARK: - URLSessionDownloadDelegate
+    
+    func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
+        guard let url = downloadTask.currentRequest?.url else { return }
+        let downloadTaskInfo = self.downloadTasks[url.absoluteString]
+        
+        downloadTaskInfo?.completion(nil, location)
+        
+        self.downloadTasks[url.absoluteString] = nil
+    }
+    
+    func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {
+        guard let url = task.currentRequest?.url else { return }
+        let downloadTaskInfo = self.downloadTasks[url.absoluteString]
+        
+        downloadTaskInfo?.completion(error, nil)
+        
+        self.downloadTasks[url.absoluteString] = nil
+    }
+    
 }

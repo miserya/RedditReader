@@ -14,7 +14,7 @@ class EntrieTableViewCell: UITableViewCell {
     @IBOutlet weak var labelAuthor: UILabel!
     @IBOutlet weak var labelTime: UILabel!
     @IBOutlet weak var labelNumberOfComments: UILabel!
-    @IBOutlet weak var imgView: UIImageView!
+    @IBOutlet weak var imgView: ImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

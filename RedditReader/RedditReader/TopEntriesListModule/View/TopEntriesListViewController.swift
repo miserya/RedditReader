@@ -9,7 +9,7 @@
 import UIKit
 import DomainLayer
 
-class TopEntriesListViewController: UIViewController, TopEntriesListViewInput {
+class TopEntriesListViewController: UIViewController, TopEntriesListViewInput, UIScrollViewDelegate {
     
     var getTopEntries: GetNextTopEntriesList!
     var output: TopEntriesListViewOutput!
@@ -17,6 +17,8 @@ class TopEntriesListViewController: UIViewController, TopEntriesListViewInput {
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var loader: UIActivityIndicatorView!
+    
+    private var isLoading: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,25 +33,36 @@ class TopEntriesListViewController: UIViewController, TopEntriesListViewInput {
         self.tableView.delegate = self.adapter
         self.tableView.dataSource = self.adapter
         
+        self.adapter.tableView = self.tableView
+        self.adapter.onBottomReached = { [weak self] in
+            guard let `self` = self else { return }
+            if !self.isLoading {
+                self.output.loadNextBatch()
+            }
+        }
+        
         self.loader.stopAnimating()
     }
     
     func startLoading() {
-        self.loader.startAnimating()
+        self.isLoading = true
+        if self.adapter.isEmpty {
+            self.loader.startAnimating()
+        }
     }
     
     func stopLoading() {
+        self.isLoading = false
         self.loader.stopAnimating()
     }
     
     func clearBatch() {
-        self.adapter.data.removeAll()
-        self.tableView.reloadData()
+        self.adapter.clearData()
     }
     
     func batchLoaded(_ items: [EntryViewItem]) {
-        self.adapter.data.append(contentsOf: items)
-        self.tableView.reloadData()
+        self.adapter.appendData(items)
     }
+    
 }
 

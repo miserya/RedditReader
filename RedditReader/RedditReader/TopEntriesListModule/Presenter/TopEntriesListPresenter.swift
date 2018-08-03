@@ -32,8 +32,6 @@ class TopEntriesListPresenter: TopEntriesListModuleInput, TopEntriesListViewOutp
         self.moduleOutput = moduleOutput
     }
     
-    //MARK: - Private
-    
     func loadNextBatch() {
         self.view.startLoading()
         self.getNextTopEntries.execute(with: GetNextTopEntriesListArgs(offset: 0, limit: self.stateStorage.requestLimit, next: self.stateStorage.next), onError: { [weak self] (error) in
@@ -42,10 +40,10 @@ class TopEntriesListPresenter: TopEntriesListModuleInput, TopEntriesListViewOutp
             self.view.stopLoading()
         }) { [weak self] (response) in
             guard let `self` = self else { return }
+            self.view.stopLoading()
             self.stateStorage.next = response.next
             self.stateStorage.prev = response.prev
             self.view.batchLoaded(self.mapper.transform(response.items))
-            self.view.stopLoading()
         }
     }
 }

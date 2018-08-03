@@ -10,12 +10,38 @@ import Foundation
 import UIKit
 
 class TopEntriesListAdapter: NSObject, UITableViewDelegate, UITableViewDataSource {
+
+    weak var tableView: UITableView?
     
-    //MARK: - UITableViewDelegate
+    var isEmpty: Bool {
+        return self.data.isEmpty
+    }
     
-    //MARK: - UITableViewDataSource
+    var onBottomReached: (() -> Void)?
+    var onThumbnailTapped: (() -> Void)?
     
-    var data = [EntryViewItem]()
+    private var data = [EntryViewItem]()
+    
+    func appendData(_ data: [EntryViewItem]) {
+        self.data.append(contentsOf: data)
+        self.tableView?.reloadData()
+//        if let tableView = self.tableView {
+//            let contentOffset = tableView.contentOffset
+//            UIView.setAnimationsEnabled(false)
+//            tableView.beginUpdates()
+//            self.tableView?.insertRows(at: indexPaths, with: UITableViewRowAnimation.none)
+//            tableView.endUpdates()
+//            UIView.setAnimationsEnabled(true)
+//            tableView.setContentOffset(contentOffset, animated: false)
+//        }
+    }
+    
+    func clearData() {
+        self.data.removeAll()
+        self.tableView?.reloadData()
+    }
+    
+    //MARK: - UITableViewDataSource, UITableViewDelegate
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.data.count
@@ -29,7 +55,16 @@ class TopEntriesListAdapter: NSObject, UITableViewDelegate, UITableViewDataSourc
         cell.labelAuthor.text = "by \(item.authorName)"
         cell.labelTime.text = item.creationDate.timeAgoString()
         cell.labelNumberOfComments.text = "\(item.numberOfComments.shortStringValue()) Comments"
-        return cell
+        return cell        
+    }
+    
+    //MARK: - UIScrollViewDelegate
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        let distance = scrollView.contentSize.height - (targetContentOffset.pointee.y + scrollView.bounds.height)
+        if distance < 250 {
+            self.onBottomReached?()
+        }
     }
     
 }

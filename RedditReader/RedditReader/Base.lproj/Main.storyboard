@@ -105,11 +105,6 @@
                             <constraint firstItem="XQM-UU-ddi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uhp-1F-CwQ"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="XQM-UU-ddi"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="loader" destination="XQM-UU-ddi" id="Ep5-IT-m46"/>

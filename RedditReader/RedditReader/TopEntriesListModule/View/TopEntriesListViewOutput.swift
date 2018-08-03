@@ -10,4 +10,6 @@ import Foundation
 
 protocol TopEntriesListViewOutput: class {
     func onViewDidLoad()
+    
+    func loadNextBatch()
 }

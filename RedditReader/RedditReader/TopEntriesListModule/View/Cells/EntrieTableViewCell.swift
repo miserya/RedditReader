@@ -31,5 +31,6 @@ class EntrieTableViewCell: UITableViewCell {
         self.labelAuthor.text = ""
         self.labelTime.text = ""
         self.imgView.image = nil
+        self.layoutIfNeeded()
     }
 }

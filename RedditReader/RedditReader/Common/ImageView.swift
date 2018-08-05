@@ -55,7 +55,7 @@ class ImageView: UIImageView {
                 do {
                     let data = try Data(contentsOf: fileURL)
                     self.image = UIImage(data: data)
-                    debugPrint("SUCCESS PARSING IMAGE DATA: \(fileURL.absoluteString)")
+//                    debugPrint("SUCCESS PARSING IMAGE DATA: \(fileURL.absoluteString)")
                 }
                 catch {
                     debugPrint("PARSING IMAGE DATA ERROR: \(error.localizedDescription) \(fileURL.absoluteString)")

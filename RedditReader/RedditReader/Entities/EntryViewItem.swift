@@ -13,6 +13,6 @@ struct EntryViewItem {
     let title: String
     let authorName: String
     let creationDate: Date
-    let thumbnailURL: URL
+    let thumbnailURL: URL?
     let numberOfComments: Int
 }

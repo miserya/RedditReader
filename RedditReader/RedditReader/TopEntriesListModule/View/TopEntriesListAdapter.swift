@@ -25,15 +25,6 @@ class TopEntriesListAdapter: NSObject, UITableViewDelegate, UITableViewDataSourc
     func appendData(_ data: [EntryViewItem]) {
         self.data.append(contentsOf: data)
         self.tableView?.reloadData()
-//        if let tableView = self.tableView {
-//            let contentOffset = tableView.contentOffset
-//            UIView.setAnimationsEnabled(false)
-//            tableView.beginUpdates()
-//            self.tableView?.insertRows(at: indexPaths, with: UITableViewRowAnimation.none)
-//            tableView.endUpdates()
-//            UIView.setAnimationsEnabled(true)
-//            tableView.setContentOffset(contentOffset, animated: false)
-//        }
     }
     
     func clearData() {
@@ -55,7 +46,12 @@ class TopEntriesListAdapter: NSObject, UITableViewDelegate, UITableViewDataSourc
         cell.labelAuthor.text = "by \(item.authorName)"
         cell.labelTime.text = item.creationDate.timeAgoString()
         cell.labelNumberOfComments.text = "\(item.numberOfComments.shortStringValue()) Comments"
-        cell.imgView.setImageURL(item.thumbnailURL)
+        if let imgURL = item.thumbnailURL {
+            cell.imgView.setImageURL(imgURL)
+        }
+        else {
+            cell.imgView.image = nil
+        }
         return cell
     }
     

@@ -19,7 +19,12 @@ class NetworkingManager: NSObject, URLSessionDownloadDelegate {
         return URLSession(configuration: URLSessionConfiguration.background(withIdentifier: "RedditReaderDownloadSession"), delegate: self, delegateQueue: nil)
     }()
     private var downloadTasks = [String: DownloadTask]()
-    
+
+    deinit {
+        self.dataSession.invalidateAndCancel()
+        self.downloadsSession.invalidateAndCancel()
+    }
+
     //MARK: - Data Request
     
     func request<Output: Decodable>(_ target: RequestTarget, completion: @escaping (Error?, Output?) -> Void) {
@@ -52,10 +57,10 @@ class NetworkingManager: NSObject, URLSessionDownloadDelegate {
             
             defer { self.dataTasks[url.absoluteString] = nil }
             
-            if let response = response {
-                debugPrint("RESPONSE: \(response)")
-            }
-            
+//            if let response = response {
+//                debugPrint("RESPONSE: \(response)")
+//            }
+
             if let error = error {
                 completion(error, nil)
             }
@@ -79,10 +84,17 @@ class NetworkingManager: NSObject, URLSessionDownloadDelegate {
             dataTask.task.cancel()
             self.downloadTasks[url.absoluteString] = nil
         }
-        
-        let downloadTask = self.downloadsSession.downloadTask(with: url)
-        downloadTask.resume()
-        self.downloadTasks[url.absoluteString] = DownloadTask(task: downloadTask, completion: completion)
+
+        debugPrint(url)
+        let fileName = url.lastPathComponent
+        if let localUrl = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName), let _ = UIImage(contentsOfFile: localUrl.path) {
+            completion(nil, localUrl)
+        }
+        else {
+            let downloadTask = self.downloadsSession.downloadTask(with: url)
+            downloadTask.resume()
+            self.downloadTasks[url.absoluteString] = DownloadTask(task: downloadTask, completion: completion)
+        }
     }
     
     func cancelDownloadingTask(with url: URL) {
@@ -97,10 +109,22 @@ class NetworkingManager: NSObject, URLSessionDownloadDelegate {
     func urlSession(_ session: URLSession, downloadTask: URLSessionDownloadTask, didFinishDownloadingTo location: URL) {
         guard let url = downloadTask.currentRequest?.url else { return }
         let downloadTaskInfo = self.downloadTasks[url.absoluteString]
-        
-        downloadTaskInfo?.completion(nil, location)
-        
-        self.downloadTasks[url.absoluteString] = nil
+
+        let fileName = url.lastPathComponent
+        guard let localUrl = NSURL(fileURLWithPath: NSTemporaryDirectory()).appendingPathComponent(fileName) else {
+            downloadTaskInfo?.completion(DomainLayerError.emptyResponse, nil)
+            return
+        }
+
+        do {
+            try FileManager.default.copyItem(at: location, to: localUrl)
+            downloadTaskInfo?.completion(nil, location)
+
+            self.downloadTasks[url.absoluteString] = nil
+        }
+        catch {
+            downloadTaskInfo?.completion(error, nil)
+        }
     }
     
     func urlSession(_ session: URLSession, task: URLSessionTask, didCompleteWithError error: Error?) {

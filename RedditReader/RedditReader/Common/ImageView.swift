@@ -12,6 +12,7 @@ import DomainLayer
 class ImageView: UIImageView {
     
     private var currentURL: URL?
+    var localImageURL: URL?
     
     override var image: UIImage? {
         get {
@@ -27,6 +28,7 @@ class ImageView: UIImageView {
     
     private lazy var loader: UIActivityIndicatorView = {
         let loader = UIActivityIndicatorView(frame: self.bounds)
+        loader.activityIndicatorViewStyle = .gray
         loader.hidesWhenStopped = true
         loader.startAnimating()
         addSubview(loader)
@@ -53,8 +55,10 @@ class ImageView: UIImageView {
             
             if imageURL == self.currentURL {
                 do {
+                    self.localImageURL = fileURL
                     let data = try Data(contentsOf: fileURL)
                     self.image = UIImage(data: data)
+
 //                    debugPrint("SUCCESS PARSING IMAGE DATA: \(fileURL.absoluteString)")
                 }
                 catch {

@@ -46,4 +46,8 @@ class TopEntriesListPresenter: TopEntriesListModuleInput, TopEntriesListViewOutp
             self.view.batchLoaded(self.mapper.transform(response.items))
         }
     }
+
+    func onImageTapped(with imageURL: URL) {
+        self.router.showThumbnailPreview(with: imageURL)
+    }
 }

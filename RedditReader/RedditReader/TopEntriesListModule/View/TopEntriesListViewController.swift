@@ -40,6 +40,9 @@ class TopEntriesListViewController: UIViewController, TopEntriesListViewInput, U
                 self.output.loadNextBatch()
             }
         }
+        self.adapter.onThumbnailTapped = { [weak self] (url) in
+            self?.output.onImageTapped(with: url)
+        }
         
         self.loader.stopAnimating()
     }

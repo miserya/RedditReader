@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let view = storyboard.instantiateViewController(withIdentifier: "TopEntriesListViewController") as! TopEntriesListViewController
         
         let router = TopEntriesListRouter()
-        router.view = view
+        router.viewController = view
         
         let presenter = TopEntriesListPresenter()
         presenter.stateStorage = TopEntriesListStateStorage()

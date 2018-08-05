@@ -18,7 +18,7 @@ class TopEntriesListAdapter: NSObject, UITableViewDelegate, UITableViewDataSourc
     }
     
     var onBottomReached: (() -> Void)?
-    var onThumbnailTapped: (() -> Void)?
+    var onThumbnailTapped: ((_ url: URL) -> Void)?
     
     private var data = [EntryViewItem]()
     
@@ -51,6 +51,10 @@ class TopEntriesListAdapter: NSObject, UITableViewDelegate, UITableViewDataSourc
         }
         else {
             cell.imgView.image = nil
+            cell.labelNoImage.isHidden = false
+        }
+        cell.onImageTapped = { [weak self] (url) in
+            self?.onThumbnailTapped?(url)
         }
         return cell
     }

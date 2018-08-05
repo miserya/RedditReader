@@ -12,4 +12,6 @@ protocol TopEntriesListViewOutput: class {
     func onViewDidLoad()
     
     func loadNextBatch()
+
+    func onImageTapped(with imageURL: URL)
 }

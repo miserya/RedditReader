@@ -30,6 +30,14 @@
 		1DA79A0021134EE900C780D7 /* TopEntriesListViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA799FF21134EE900C780D7 /* TopEntriesListViewInput.swift */; };
 		1DA79A0221134EF300C780D7 /* TopEntriesListViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA79A0121134EF300C780D7 /* TopEntriesListViewOutput.swift */; };
 		1DA79A0A2113516600C780D7 /* TopEntriesListStateStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DA79A092113516600C780D7 /* TopEntriesListStateStorage.swift */; };
+		66B82DF221172DE800A11BDC /* EntrieThumbnailPreviewPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B82DF121172DE800A11BDC /* EntrieThumbnailPreviewPresenter.swift */; };
+		66B82DF421172E0100A11BDC /* EntrieThumbnailPreviewModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B82DF321172E0100A11BDC /* EntrieThumbnailPreviewModuleInput.swift */; };
+		66B82DF621172E2600A11BDC /* EntrieThumbnailPreviewModuleOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B82DF521172E2600A11BDC /* EntrieThumbnailPreviewModuleOutput.swift */; };
+		66B82DFB21172E5600A11BDC /* EntrieThumbnailPreviewRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B82DFA21172E5600A11BDC /* EntrieThumbnailPreviewRouter.swift */; };
+		66B82DFD21172E6C00A11BDC /* EntrieThumbnailPreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B82DFC21172E6C00A11BDC /* EntrieThumbnailPreviewViewController.swift */; };
+		66B82DFF21172E8300A11BDC /* EntrieThumbnailPreviewViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B82DFE21172E8300A11BDC /* EntrieThumbnailPreviewViewInput.swift */; };
+		66B82E0121172E8C00A11BDC /* EntrieThumbnailPreviewViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B82E0021172E8C00A11BDC /* EntrieThumbnailPreviewViewOutput.swift */; };
+		66B82E032117306D00A11BDC /* EntrieThumbnailPreviewStateStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66B82E022117306D00A11BDC /* EntrieThumbnailPreviewStateStorage.swift */; };
 		66D2035B2110EDB400982CF7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D2035A2110EDB400982CF7 /* AppDelegate.swift */; };
 		66D2035D2110EDB400982CF7 /* TopEntriesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66D2035C2110EDB400982CF7 /* TopEntriesListViewController.swift */; };
 		66D203602110EDB400982CF7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 66D2035E2110EDB400982CF7 /* Main.storyboard */; };
@@ -92,6 +100,14 @@
 		1DA799FF21134EE900C780D7 /* TopEntriesListViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopEntriesListViewInput.swift; sourceTree = "<group>"; };
 		1DA79A0121134EF300C780D7 /* TopEntriesListViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopEntriesListViewOutput.swift; sourceTree = "<group>"; };
 		1DA79A092113516600C780D7 /* TopEntriesListStateStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopEntriesListStateStorage.swift; sourceTree = "<group>"; };
+		66B82DF121172DE800A11BDC /* EntrieThumbnailPreviewPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntrieThumbnailPreviewPresenter.swift; sourceTree = "<group>"; };
+		66B82DF321172E0100A11BDC /* EntrieThumbnailPreviewModuleInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntrieThumbnailPreviewModuleInput.swift; sourceTree = "<group>"; };
+		66B82DF521172E2600A11BDC /* EntrieThumbnailPreviewModuleOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntrieThumbnailPreviewModuleOutput.swift; sourceTree = "<group>"; };
+		66B82DFA21172E5600A11BDC /* EntrieThumbnailPreviewRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntrieThumbnailPreviewRouter.swift; sourceTree = "<group>"; };
+		66B82DFC21172E6C00A11BDC /* EntrieThumbnailPreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntrieThumbnailPreviewViewController.swift; sourceTree = "<group>"; };
+		66B82DFE21172E8300A11BDC /* EntrieThumbnailPreviewViewInput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntrieThumbnailPreviewViewInput.swift; sourceTree = "<group>"; };
+		66B82E0021172E8C00A11BDC /* EntrieThumbnailPreviewViewOutput.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EntrieThumbnailPreviewViewOutput.swift; sourceTree = "<group>"; };
+		66B82E022117306D00A11BDC /* EntrieThumbnailPreviewStateStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EntrieThumbnailPreviewStateStorage.swift; path = ../../../TopEntriesListModule/Presenter/StateStorage/EntrieThumbnailPreviewStateStorage.swift; sourceTree = "<group>"; };
 		66D203572110EDB300982CF7 /* RedditReader.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RedditReader.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		66D2035A2110EDB400982CF7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		66D2035C2110EDB400982CF7 /* TopEntriesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopEntriesListViewController.swift; sourceTree = "<group>"; };
@@ -256,6 +272,53 @@
 			path = StateStorage;
 			sourceTree = "<group>";
 		};
+		66B82DEC21172D2400A11BDC /* EntrieThumbnailPreviewModule */ = {
+			isa = PBXGroup;
+			children = (
+				66B82DEE21172D4200A11BDC /* Presenter */,
+				66B82DEF21172D4E00A11BDC /* Router */,
+				66B82DF021172D5A00A11BDC /* View */,
+			);
+			path = EntrieThumbnailPreviewModule;
+			sourceTree = "<group>";
+		};
+		66B82DEE21172D4200A11BDC /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				66B82DF721172E3700A11BDC /* StateStorage */,
+				66B82DF321172E0100A11BDC /* EntrieThumbnailPreviewModuleInput.swift */,
+				66B82DF521172E2600A11BDC /* EntrieThumbnailPreviewModuleOutput.swift */,
+				66B82DF121172DE800A11BDC /* EntrieThumbnailPreviewPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		66B82DEF21172D4E00A11BDC /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				66B82DFA21172E5600A11BDC /* EntrieThumbnailPreviewRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		66B82DF021172D5A00A11BDC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				66B82DFE21172E8300A11BDC /* EntrieThumbnailPreviewViewInput.swift */,
+				66B82E0021172E8C00A11BDC /* EntrieThumbnailPreviewViewOutput.swift */,
+				66B82DFC21172E6C00A11BDC /* EntrieThumbnailPreviewViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		66B82DF721172E3700A11BDC /* StateStorage */ = {
+			isa = PBXGroup;
+			children = (
+				66B82E022117306D00A11BDC /* EntrieThumbnailPreviewStateStorage.swift */,
+			);
+			path = StateStorage;
+			sourceTree = "<group>";
+		};
 		66D2034E2110EDB300982CF7 = {
 			isa = PBXGroup;
 			children = (
@@ -281,6 +344,7 @@
 				1D8DA27321148C0C00EE3ED1 /* Common */,
 				1DA79A0521134F2200C780D7 /* Entities */,
 				1DA799F321134D0F00C780D7 /* TopEntriesListModule */,
+				66B82DEC21172D2400A11BDC /* EntrieThumbnailPreviewModule */,
 				66D2035A2110EDB400982CF7 /* AppDelegate.swift */,
 				66D2035E2110EDB400982CF7 /* Main.storyboard */,
 				66D203612110EDB600982CF7 /* Assets.xcassets */,
@@ -452,22 +516,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66B82DFB21172E5600A11BDC /* EntrieThumbnailPreviewRouter.swift in Sources */,
 				1DA799F821134E1000C780D7 /* TopEntriesListPresenter.swift in Sources */,
 				66D2035D2110EDB400982CF7 /* TopEntriesListViewController.swift in Sources */,
 				1DA799FC21134ECD00C780D7 /* TopEntriesListModuleOutput.swift in Sources */,
+				66B82DF421172E0100A11BDC /* EntrieThumbnailPreviewModuleInput.swift in Sources */,
 				1DA79A0021134EE900C780D7 /* TopEntriesListViewInput.swift in Sources */,
 				1D8DA263211443F400EE3ED1 /* TopEntriesListAdapter.swift in Sources */,
 				1D8DA2702114515300EE3ED1 /* Int+Helper.swift in Sources */,
 				1D8DA2662114479400EE3ED1 /* EntrieTableViewCell.swift in Sources */,
+				66B82DFD21172E6C00A11BDC /* EntrieThumbnailPreviewViewController.swift in Sources */,
+				66B82E0121172E8C00A11BDC /* EntrieThumbnailPreviewViewOutput.swift in Sources */,
 				1D8DA268211448DC00EE3ED1 /* EntryViewItem.swift in Sources */,
+				66B82DFF21172E8300A11BDC /* EntrieThumbnailPreviewViewInput.swift in Sources */,
 				1D8DA27521148C3B00EE3ED1 /* ImageView.swift in Sources */,
+				66B82E032117306D00A11BDC /* EntrieThumbnailPreviewStateStorage.swift in Sources */,
 				1DA799FE21134ED900C780D7 /* TopEntriesListModuleInput.swift in Sources */,
 				1DA79A0A2113516600C780D7 /* TopEntriesListStateStorage.swift in Sources */,
 				66D2035B2110EDB400982CF7 /* AppDelegate.swift in Sources */,
 				1DA79A0221134EF300C780D7 /* TopEntriesListViewOutput.swift in Sources */,
+				66B82DF621172E2600A11BDC /* EntrieThumbnailPreviewModuleOutput.swift in Sources */,
 				1D8DA26E21144AC800EE3ED1 /* Date+Helper.swift in Sources */,
 				1D8DA26B2114491000EE3ED1 /* EntryMapper.swift in Sources */,
 				1DA799FA21134E1A00C780D7 /* TopEntriesListRouter.swift in Sources */,
+				66B82DF221172DE800A11BDC /* EntrieThumbnailPreviewPresenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

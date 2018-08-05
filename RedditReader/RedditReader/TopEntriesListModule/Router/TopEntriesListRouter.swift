@@ -23,6 +23,7 @@ class TopEntriesListRouter {
         presenter.stateStorage = EntrieThumbnailPreviewStateStorage()
         presenter.view = view
         presenter.router = router
+        presenter.savingManager = ImageSavingManager()
         presenter.configurate(with: EntrieThumbnailPreviewInputData(imageURL: imageURL), moduleOutput: nil)
 
         view.output = presenter

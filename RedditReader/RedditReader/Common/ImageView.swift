@@ -30,6 +30,7 @@ class ImageView: UIImageView {
         let loader = UIActivityIndicatorView(frame: self.bounds)
         loader.activityIndicatorViewStyle = .gray
         loader.hidesWhenStopped = true
+        loader.translatesAutoresizingMaskIntoConstraints = false
         loader.startAnimating()
         addSubview(loader)
         
@@ -58,7 +59,6 @@ class ImageView: UIImageView {
                     self.localImageURL = fileURL
                     let data = try Data(contentsOf: fileURL)
                     self.image = UIImage(data: data)
-
 //                    debugPrint("SUCCESS PARSING IMAGE DATA: \(fileURL.absoluteString)")
                 }
                 catch {

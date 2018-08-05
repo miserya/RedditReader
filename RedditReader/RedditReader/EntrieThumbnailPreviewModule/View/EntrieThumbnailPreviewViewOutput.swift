@@ -7,8 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
 protocol EntrieThumbnailPreviewViewOutput {
 
     func onViewDidLoad()
+
+    func onNeedSaveImage(_ image: UIImage)
 }

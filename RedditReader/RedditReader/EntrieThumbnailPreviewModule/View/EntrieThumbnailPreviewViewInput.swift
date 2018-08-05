@@ -11,4 +11,6 @@ import Foundation
 protocol EntrieThumbnailPreviewViewInput {
 
     func setupInitialState(with imageURL: URL)
+
+    func showSuccessAlert()
 }

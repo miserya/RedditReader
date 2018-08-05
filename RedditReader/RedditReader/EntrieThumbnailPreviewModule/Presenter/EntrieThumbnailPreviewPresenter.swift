@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class EntrieThumbnailPreviewPresenter: EntrieThumbnailPreviewModuleInput, EntrieThumbnailPreviewViewOutput {
 
@@ -14,6 +15,7 @@ class EntrieThumbnailPreviewPresenter: EntrieThumbnailPreviewModuleInput, Entrie
     var router: EntrieThumbnailPreviewRouter!
     var moduleOutput: EntrieThumbnailPreviewModuleOutput?
     var stateStorage: EntrieThumbnailPreviewStateStorage!
+    var savingManager: ImageSavingManager!
 
     //MARK: - EntrieThumbnailPreviewModuleInput
 
@@ -27,4 +29,17 @@ class EntrieThumbnailPreviewPresenter: EntrieThumbnailPreviewModuleInput, Entrie
     func onViewDidLoad() {
         self.view.setupInitialState(with: self.stateStorage.imagURL)
     }
+
+    func onNeedSaveImage(_ image: UIImage) {
+        self.savingManager.saveImage(image) { [weak self] (success) in
+            guard let `self` = self else { return }
+            if success {
+                self.view.showSuccessAlert()
+            }
+            else {
+                self.view.showFailAlert()
+            }
+        }
+    }
+
 }
